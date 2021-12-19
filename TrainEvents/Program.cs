@@ -6,8 +6,14 @@ namespace CSharp.Activity.Events
     {
         static void Main(string[] args)
         {
+
             TrainStation trainStation = new TrainStation();
-            trainStation.Arrival += new EventHandler(AnnounceArrival);
+            var arrsub1 = new ArrivalSubscriber(trainStation);
+            var arrsub2 = new ArrivalSubscriber(trainStation);
+
+            trainStation.AnnounceArrival(1, 0, DateTime.Now);
+
+           
         }
 
     }
